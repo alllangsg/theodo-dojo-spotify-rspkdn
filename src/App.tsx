@@ -18,9 +18,13 @@ const App = () => {
 		queryFn: fetchTracks
 });
 
-  console.log(tracks?.length)
+  if(tracks == undefined){
+    return "Loading";
+  }
 
-  
+  console.log(tracks)
+
+
 
   return (
     <div className="App">
@@ -32,8 +36,10 @@ const App = () => {
 
       <div className="App-images">
         <p>Il va falloir modifier le code pour faire un vrai blind test !</p>
-        <p>This is a new text line added to the code!</p>
+        <p>Il y a {tracks?.length} tracks disponibles.</p>
       </div>
+
+      <div> {tracks[trackIndex]?.track.name}</div>
 
       <div className="App-buttons"></div>
       <audio src={trackUrls[trackIndex]} autoPlay controls />
