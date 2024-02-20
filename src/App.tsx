@@ -3,6 +3,7 @@ import './App.css';
 import { useState } from 'react';
 import { fetchTracks } from './lib/fetchTracks';
 import { useQuery } from '@tanstack/react-query';
+import { SavedTrack } from 'spotify-types';
 
 const App = () => {
 
@@ -17,7 +18,9 @@ const App = () => {
 		queryFn: fetchTracks
 });
 
-  console.log(tracks)
+  console.log(tracks?.length)
+
+  
 
   return (
     <div className="App">
