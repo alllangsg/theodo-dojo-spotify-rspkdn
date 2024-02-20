@@ -1,6 +1,8 @@
 import logo from './assets/logo.svg';
 import './App.css';
 import { useState } from 'react';
+import { fetchTracks } from './lib/fetchTracks';
+import { useQuery } from '@tanstack/react-query';
 
 const App = () => {
 
@@ -9,6 +11,13 @@ const App = () => {
   const goToNextTrack = () => {
     setTrackIndex(trackIndex + 1);
   }
+
+  const { data: tracks } = useQuery({
+		queryKey: ['tracks'],
+		queryFn: fetchTracks
+});
+
+  console.log(tracks)
 
   return (
     <div className="App">
@@ -28,6 +37,7 @@ const App = () => {
       <button onClick={goToNextTrack}>
         Next track
       </button>
+
 
 
 
