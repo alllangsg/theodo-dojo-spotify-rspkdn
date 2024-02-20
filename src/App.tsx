@@ -10,6 +10,7 @@ const App = () => {
       </header>
       <div className="App-images">
         <p>Il va falloir modifier le code pour faire un vrai blind test !</p>
+        <p>This is a new text line added to the code!</p>
       </div>
       <div className="App-buttons"></div>
     </div>
